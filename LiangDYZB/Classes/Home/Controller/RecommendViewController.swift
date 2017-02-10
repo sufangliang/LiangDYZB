@@ -7,29 +7,54 @@
 //
 
 import UIKit
+private let kCycleViewH = kScreenW * 3 / 8
+private let kGameViewH : CGFloat = 90
 
 class RecommendViewController: BaseViewController {
 
+    // MARK:- 懒加载属性
+    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+
+    
+    fileprivate lazy var  cycleView : RecommendCycleView = {
+        let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kCycleViewH)
+        cycleView.backgroundColor = UIColor.lightGray
+        return  cycleView
+        
+    }()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.blue
+        
+        setupUI()
+        
+        loaddata()  
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   }
+
+
+// MARK - 设置UI
+extension RecommendViewController{
+    override func setupUI() {
+        super.setupUI()
+        
+        view .addSubview(cycleView)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+// MARK - 设置UI
+extension RecommendViewController{
+    func loaddata() {
+        recommendVM.requestData {
+            
+        }
     }
-    */
-
+    
 }

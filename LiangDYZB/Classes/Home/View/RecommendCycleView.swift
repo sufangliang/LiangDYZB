@@ -35,7 +35,15 @@ class RecommendCycleView: UIView {
          */
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize  = collectionView.bounds.size
-        
+        //设置cell横向滑动
+        layout.scrollDirection = UICollectionViewScrollDirection.horizontal
+
+    }
+}
+
+extension RecommendCycleView{
+    class  func recommendCycleView() -> RecommendCycleView {
+        return Bundle.main.loadNibNamed("RecommendCycleView", owner: nil, options: nil)?.last as! RecommendCycleView
     }
 }
 
@@ -48,6 +56,7 @@ extension RecommendCycleView:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  =   collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCellID, for: indexPath) as! CollectionCycleCell
+        cell.contentView.backgroundColor = UIColor.blue
         return cell
     }
     
