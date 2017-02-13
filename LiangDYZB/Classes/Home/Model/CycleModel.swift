@@ -11,7 +11,7 @@ import UIKit
 class CycleModel: NSObject {
     var title:String = ""
     var pic_url:String  = ""
-    
+    ssssss
     var room:[String:NSObject]
     
 
