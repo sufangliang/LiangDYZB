@@ -42,6 +42,7 @@
 		92B2881F1E37402B0049B08B /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2881E1E37402B0049B08B /* BaseAnchorViewController.swift */; };
 		92B288221E3759D20049B08B /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B288201E3759D20049B08B /* CollectionCycleCell.swift */; };
 		92B288231E3759D20049B08B /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B288211E3759D20049B08B /* CollectionCycleCell.xib */; };
+		92C704721E51606E0090DB7C /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C704711E51606E0090DB7C /* AnchorModel.swift */; };
 		A69056A83A21D7691E0D1001 /* Pods_LiangDYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DBA45D15A562FF97DD3D34 /* Pods_LiangDYZB.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		92B2881E1E37402B0049B08B /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
 		92B288201E3759D20049B08B /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
 		92B288211E3759D20049B08B /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
+		92C704711E51606E0090DB7C /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		E24E959ADABE866DBD34D70D /* Pods-LiangDYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiangDYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiangDYZB/Pods-LiangDYZB.debug.xcconfig"; sourceTree = "<group>"; };
 		FF8EB47E9F1BF75179FFB476 /* Pods-LiangDYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiangDYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiangDYZB/Pods-LiangDYZB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +287,7 @@
 		92395A7B1E1DEE4A0073173D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92C704711E51606E0090DB7C /* AnchorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				922A254D1E275AA800882BAE /* AmuseViewController.swift in Sources */,
 				92B288221E3759D20049B08B /* CollectionCycleCell.swift in Sources */,
 				92B2881D1E372F500049B08B /* BaseViewController.swift in Sources */,
+				92C704721E51606E0090DB7C /* AnchorModel.swift in Sources */,
 				922A254A1E275A5C00882BAE /* RecommendViewController.swift in Sources */,
 				92522D161E4DC3000068A76C /* CycleModel.swift in Sources */,
 				922A25511E275AC200882BAE /* FunnyViewController.swift in Sources */,

@@ -21,7 +21,6 @@ class BaseViewController: UIViewController {
         imageView.animationImages = [UIImage(named : "img_loading_1")!, UIImage(named : "img_loading_2")!]
         imageView.animationDuration = 0.5
         imageView.animationRepeatCount = LONG_MAX
-        imageView.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
         return imageView
     }()
     
@@ -42,7 +41,7 @@ extension BaseViewController {
         
         // 2.添加执行动画的UIImageView
         view.addSubview(animImageView)
-        
+        animImageView.center = view.center
         // 3.给animImageView执行动画
         animImageView.startAnimating()
         

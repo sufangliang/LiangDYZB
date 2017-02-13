@@ -9,6 +9,8 @@
 import UIKit
 
 class RecommendViewModel: NSObject {
+    // MARK:- 懒加载属性
+    lazy var cycleModels : [CycleModel] = [CycleModel]()
 
 }
 
@@ -17,7 +19,7 @@ extension RecommendViewModel{
     func requestData(_finshCallback:@escaping () -> ()) {
         //定义参数
         let parameters = ["limit":"4","offset" : "0", "time" : Date.getCurrentTime()]
-        
+    
         // 2.创建Group
         let dGroup = DispatchGroup()
         
@@ -26,16 +28,17 @@ extension RecommendViewModel{
         NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
             guard let resultDict = result as?[String:NSObject] else{return}
             
-            print("haha\(resultDict)")
+            print("推荐数据\(resultDict)")
             
             
         }
     }
     
-    
     // 请求无线轮播的数据
     func requestCycleData(_ finishCallback : @escaping () -> ()) {
         NetworkTools.requestData(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
+            print("轮播数据\(result)")
+
             // 1.获取整体字典数据
             guard let resultDict = result as? [String : NSObject] else { return }
             

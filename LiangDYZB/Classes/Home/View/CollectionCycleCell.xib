@@ -52,6 +52,10 @@
                 <constraint firstItem="XPn-8e-8au" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zWk-5d-Lm9"/>
             </constraints>
             <size key="customSize" width="285" height="111"/>
+            <connections>
+                <outlet property="img" destination="XPn-8e-8au" id="uyS-dh-Y0R"/>
+                <outlet property="titleLab" destination="lSh-jZ-WG1" id="0DF-Zv-sm1"/>
+            </connections>
             <point key="canvasLocation" x="88.5" y="82.5"/>
         </collectionViewCell>
     </objects>

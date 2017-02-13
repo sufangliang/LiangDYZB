@@ -52,9 +52,19 @@ extension RecommendViewController{
 // MARK - 设置UI
 extension RecommendViewController{
     func loaddata() {
+        // 1.请求推荐数据
         recommendVM.requestData {
             
         }
+        
+        
+        // 2.请求轮播数据
+        recommendVM.requestCycleData {
+            self.cycleView.cycleModes = self.recommendVM.cycleModels
+            
+        }
+   
+   
     }
     
 }
