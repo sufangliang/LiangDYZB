@@ -7,29 +7,65 @@
 //
 
 import UIKit
+private let kItemMargin:CGFloat =  10
+private let kHeaderViewH:CGFloat =  50
+
+private let kNormalCellID = "kNormalCellID"
+
+private let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
+private let kNormalItemH = kNormalItemW * 3 / 4
 
 class BaseAnchorViewController: BaseViewController {
+    lazy var collectionView:UICollectionView = {
+        // 创建布局
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: kNormalItemW, height: kNormalItemH)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = kItemMargin
+        layout.headerReferenceSize  = CGSize(width: kScreenW, height: kHeaderViewH)
+        
+        // 2.创建UICollectionView
+        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        collectionView.backgroundColor = UIColor.white
+        collectionView.dataSource = self
+        //        collectionView.delegate = self
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        
+        return collectionView
+    }()
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        view.addSubview(collectionView)
+        
     }
     
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension BaseAnchorViewController{
+    override func setupUI() {
+        
+        
     }
-    */
+   }
+ //MARK: - collectView 数据源
+extension BaseAnchorViewController:UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView .dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        return cell
 
+    }
+    
 }

@@ -27,7 +27,6 @@ extension RecommendViewModel{
         dGroup.enter()
         NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
             guard let resultDict = result as?[String:NSObject] else{return}
-            
             print("推荐数据\(resultDict)")
             
             

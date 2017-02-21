@@ -38,6 +38,8 @@
 		92691E201E306D4B0049DA4F /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92691E1F1E306D4B0049DA4F /* UIColor-Extension.swift */; };
 		92691E221E309D4C0049DA4F /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92691E211E309D4C0049DA4F /* RecommendCycleView.swift */; };
 		92691E241E309D5C0049DA4F /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92691E231E309D5C0049DA4F /* RecommendCycleView.xib */; };
+		927E95CC1E5C3FC2007E0B98 /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E95CA1E5C3FC2007E0B98 /* CollectionNormalCell.swift */; };
+		927E95CD1E5C3FC2007E0B98 /* CollectionNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927E95CB1E5C3FC2007E0B98 /* CollectionNormalCell.xib */; };
 		92B2881D1E372F500049B08B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2881C1E372F500049B08B /* BaseViewController.swift */; };
 		92B2881F1E37402B0049B08B /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2881E1E37402B0049B08B /* BaseAnchorViewController.swift */; };
 		92B288221E3759D20049B08B /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B288201E3759D20049B08B /* CollectionCycleCell.swift */; };
@@ -102,6 +104,8 @@
 		92691E1F1E306D4B0049DA4F /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		92691E211E309D4C0049DA4F /* RecommendCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
 		92691E231E309D5C0049DA4F /* RecommendCycleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
+		927E95CA1E5C3FC2007E0B98 /* CollectionNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
+		927E95CB1E5C3FC2007E0B98 /* CollectionNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionNormalCell.xib; sourceTree = "<group>"; };
 		92B2881C1E372F500049B08B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		92B2881E1E37402B0049B08B /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
 		92B288201E3759D20049B08B /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 			children = (
 				924600E71E24B2CC003B17B4 /* PageTitleView.swift */,
 				922A25431E27294000882BAE /* PageContentView.swift */,
+				927E95CA1E5C3FC2007E0B98 /* CollectionNormalCell.swift */,
+				927E95CB1E5C3FC2007E0B98 /* CollectionNormalCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 			files = (
 				92691E241E309D5C0049DA4F /* RecommendCycleView.xib in Resources */,
 				92395A4E1E1DE4100073173D /* LaunchScreen.storyboard in Resources */,
+				927E95CD1E5C3FC2007E0B98 /* CollectionNormalCell.xib in Resources */,
 				92395A721E1DE4A20073173D /* Assets.xcassets in Resources */,
 				922A25521E275AC200882BAE /* FunnyViewController.xib in Resources */,
 				92B288231E3759D20049B08B /* CollectionCycleCell.xib in Resources */,
@@ -586,6 +593,7 @@
 				922A25441E27294100882BAE /* PageContentView.swift in Sources */,
 				92B2881F1E37402B0049B08B /* BaseAnchorViewController.swift in Sources */,
 				92395A441E1DE4100073173D /* AppDelegate.swift in Sources */,
+				927E95CC1E5C3FC2007E0B98 /* CollectionNormalCell.swift in Sources */,
 				92522D121E4DB1DD0068A76C /* NSDate-Extension.swift in Sources */,
 				92395A961E1E1C860073173D /* LiveViewController.swift in Sources */,
 				92395A9D1E1E35C80073173D /* Common.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 private let kCycleViewH = kScreenW * 3 / 8
 private let kGameViewH : CGFloat = 90
 
-class RecommendViewController: BaseViewController {
+class RecommendViewController: BaseAnchorViewController {
 
     // MARK:- 懒加载属性
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
