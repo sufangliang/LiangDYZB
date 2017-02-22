@@ -16,13 +16,15 @@ enum MethodType {
 
 class NetworkTools {
     class func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Any) -> ()) {
-        
+        print("请求链接\(URLString)      \n 请求参数\(parameters)")
+
         // 1.获取类型
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
         
              // 2.发送网络请求
         Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
-            
+            print("返回数据\(response)")
+
             // 3.获取结果
             guard let result = response.result.value else {
                 print(response.result.error ?? "错了就是错了")

@@ -8,20 +8,27 @@
 
 import UIKit
 private let kCycleViewH = kScreenW * 3 / 8
-private let kGameViewH : CGFloat = 90
+let kGameViewH : CGFloat = 90
 
 class RecommendViewController: BaseAnchorViewController {
 
     // MARK:- 懒加载属性
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
 
-    
+     // MARK:- 轮播图
     fileprivate lazy var  cycleView : RecommendCycleView = {
         let cycleView = RecommendCycleView.recommendCycleView()
-        cycleView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kCycleViewH)
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewH+kGameViewH), width: kScreenW, height: kCycleViewH)
         cycleView.backgroundColor = UIColor.lightGray
         return  cycleView
         
+    }()
+    
+     // MARK:- 轮播图下方的可横向滚动的游戏视图
+    fileprivate lazy var gameView :RecommendGameView = {
+        let  gameView =  RecommendGameView.recommendGameView()
+        gameView.frame =  CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
     }()
 
     
@@ -43,7 +50,10 @@ extension RecommendViewController{
     override func setupUI() {
         super.setupUI()
         
-        view .addSubview(cycleView)
+     
+        collectionView .addSubview(cycleView)   //添加轮播图
+        collectionView .addSubview(gameView)   //添加轮播图下方游戏视图
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH+kGameViewH, 0, 0, 0)//设置collectionView的内边距
     }
     
 }

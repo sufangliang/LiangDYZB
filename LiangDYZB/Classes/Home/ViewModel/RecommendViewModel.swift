@@ -26,8 +26,11 @@ extension RecommendViewModel{
         // 3.请求第一部分推荐数据
         dGroup.enter()
         NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
+            // 1.将result转成字典类型
             guard let resultDict = result as?[String:NSObject] else{return}
-            print("推荐数据\(resultDict)")
+            
+            // 2.根据data该key,获取数组
+            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
             
             
         }
