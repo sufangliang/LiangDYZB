@@ -69,7 +69,12 @@
                 <constraint firstItem="eZW-d3-jpC" firstAttribute="centerY" secondItem="OK6-Vc-Dgx" secondAttribute="centerY" id="xLw-al-rRQ"/>
             </constraints>
             <size key="customSize" width="253" height="182"/>
-            <point key="canvasLocation" x="332.5" y="294"/>
+            <connections>
+                <outlet property="iconImageView" destination="ShO-ip-vm2" id="V70-P3-4Za"/>
+                <outlet property="nickNameLabel" destination="D1f-XU-8TN" id="efs-u6-oDj"/>
+                <outlet property="onlineBtn" destination="uHA-pF-40z" id="9v7-Sq-si6"/>
+            </connections>
+            <point key="canvasLocation" x="417" y="293"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -19,6 +19,9 @@ private let kPrettyItemH = kNormalItemW * 4 / 3
 
 
 class BaseAnchorViewController: BaseViewController {
+    // MARK: 定义属性
+    var baseVM : RecommendViewModel!
+
     lazy var collectionView:UICollectionView = {
         // 创建布局
         let layout = UICollectionViewFlowLayout()
@@ -49,7 +52,6 @@ class BaseAnchorViewController: BaseViewController {
 
     }
     
-    
 }
 
 extension BaseAnchorViewController{
@@ -68,21 +70,22 @@ extension BaseAnchorViewController{
  //MARK: - collectView 数据源
 extension BaseAnchorViewController:UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return baseVM.anchorGroups.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }
-        return 4
+              return baseVM.anchorGroups[section].anchors.count
         }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 1 {
-            let cell = collectionView .dequeueReusableCell(withReuseIdentifier: KPrettyCellID, for: indexPath)
+            let cell = collectionView .dequeueReusableCell(withReuseIdentifier: KPrettyCellID, for: indexPath) as! CollectionPrettyCell
+            let anchor  = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+            cell.anchor = anchor
             return cell
         }
-        let cell = collectionView .dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        let cell = collectionView .dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)  as! CollectionNormalCell
+        let anchor  = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+        cell.anchor = anchor
         return cell
 
     }

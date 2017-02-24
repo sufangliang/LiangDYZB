@@ -62,9 +62,12 @@ extension RecommendViewController{
 // MARK - 设置UI
 extension RecommendViewController{
     func loaddata() {
+        // 0.给父类中的ViewModel进行赋值
+        baseVM = recommendVM
+
         // 1.请求推荐数据
         recommendVM.requestData {
-            
+         self.collectionView.reloadData()
         }
         
         

@@ -80,6 +80,11 @@
                 <constraint firstAttribute="trailing" secondItem="J0x-Yc-1rQ" secondAttribute="trailing" id="udf-bm-ozq"/>
             </constraints>
             <size key="customSize" width="182" height="215"/>
+            <connections>
+                <outlet property="iconImageView" destination="J0x-Yc-1rQ" id="jSJ-x2-xsF"/>
+                <outlet property="nickNameLabel" destination="iOr-yu-Mxu" id="eoP-X7-dOV"/>
+                <outlet property="onlineBtn" destination="diG-BO-hPa" id="od6-gr-WUK"/>
+            </connections>
             <point key="canvasLocation" x="311" y="246.5"/>
         </collectionViewCell>
     </objects>

@@ -13,6 +13,10 @@ class BaseGameModel: NSObject {
     var icon_url : String = ""
     
     // MARK:- 自定义构造函数
+    override init() {  //????????????????
+        
+    }
+
     init(dict : [String : Any]) {
         super.init()
         
