@@ -32,7 +32,7 @@ extension RecommendViewModel{
         NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
             // 1.将result转成字典类型
             guard let resultDict = result as?[String:NSObject] else{return}
-            print("推荐数据\(resultDict)")
+            print("第一部分推荐数据")
             
             // 2.根据data该key,获取数组
             guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
@@ -55,6 +55,8 @@ extension RecommendViewModel{
         // 4.请求第二部分颜值数据
         dGroup.enter()
         NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parameters) { (result) in
+            print("第二部分推荐数据")
+
             // 1.将result转成字典类型
             guard let resultDict = result as? [String : NSObject] else { return }
             
@@ -77,8 +79,11 @@ extension RecommendViewModel{
 
         }
         
-        
+        dGroup.enter()
+
         NetworkTools.requestData(.get, URLString:"http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { (result) in
+            print("第三部分数据")
+
             // 1.对界面进行处理
             guard let resultDict = result as? [String : Any] else { return }
             guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
@@ -88,13 +93,15 @@ extension RecommendViewModel{
                 for dict in dataArray {
                     self.anchorGroups.append(AnchorGroup(dict: dict))
             }
-       
+            dGroup.leave()
+
         }
         
         // 6.所有的数据都请求到,之后进行排序
         dGroup.notify(queue: DispatchQueue.main) {
             self.anchorGroups.insert(self.prettyGroup, at: 0)
             self.anchorGroups.insert(self.bigDataGroup, at: 0)
+            
             
             finshCallback()
         }

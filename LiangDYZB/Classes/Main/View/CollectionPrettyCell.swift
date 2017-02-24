@@ -15,7 +15,9 @@ class CollectionPrettyCell: UICollectionViewCell {
     @IBOutlet weak var onlineBtn: UIButton!
     
     @IBOutlet weak var nickNameLabel: UILabel!
-    
+
+    @IBOutlet weak var addressBtn: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -35,10 +37,15 @@ class CollectionPrettyCell: UICollectionViewCell {
             //昵称
             nickNameLabel.text = anchor.nickname
             
-            // 3.设置封面图片
+                   // 3.设置封面图片
             guard let iconURL = URL(string: anchor.vertical_src) else { return }
             iconImageView.kf.setImage(with: iconURL)
             
+            
+            //地址 
+            addressBtn.setTitle(anchor.anchor_city, for: .normal)
+            
+
         }
     }
 

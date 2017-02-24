@@ -23,7 +23,7 @@ class NetworkTools {
         
              // 2.发送网络请求
         Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
-            print("返回数据\(response)")
+//            print("返回数据\(response)")
 
             // 3.获取结果
             guard let result = response.result.value else {

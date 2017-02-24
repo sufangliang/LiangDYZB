@@ -12,6 +12,7 @@ private let kHeaderViewH:CGFloat =  50
 
 private let kNormalCellID = "kNormalCellID"
 private let KPrettyCellID = "CollectionPrettyCell"
+private let kHeaderViewID = "kHeaderViewID"
 
 private let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
 private let kNormalItemH = kNormalItemW * 3 / 4
@@ -39,6 +40,7 @@ class BaseAnchorViewController: BaseViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
         collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: KPrettyCellID)
+        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
 
         return collectionView
     }()
@@ -64,12 +66,12 @@ extension BaseAnchorViewController{
         // 3.调用super.setupUI()
         super.setupUI()
 
-
     }
    }
  //MARK: - collectView 数据源
 extension BaseAnchorViewController:UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        print("共有多少组\( baseVM.anchorGroups.count)")
         return baseVM.anchorGroups.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -88,6 +90,12 @@ extension BaseAnchorViewController:UICollectionViewDataSource{
         cell.anchor = anchor
         return cell
 
+    }
+    //组头视图
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        headView.group = baseVM.anchorGroups[indexPath.section];
+        return headView
     }
     
 }

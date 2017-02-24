@@ -16,6 +16,8 @@ class CollectionNormalCell: UICollectionViewCell {
     
     @IBOutlet weak var nickNameLabel: UILabel!
     
+    @IBOutlet weak var roomnameLab: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,6 +36,9 @@ class CollectionNormalCell: UICollectionViewCell {
             
             //昵称
             nickNameLabel.text = anchor.nickname
+            
+            //房间名
+            roomnameLab.text = anchor.room_name
             
             // 3.设置封面图片
             guard let iconURL = URL(string: anchor.vertical_src) else { return }
